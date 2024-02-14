@@ -1,71 +1,38 @@
-  var selectedrow = null
-  function onformsubmit(e){
+function onformsubmit(event) {
     event.preventDefault();
-    var formdata = readFormdata();
-    if(selectedrow === null){
-      insertNewrecord(formdata);
-    }
-      else {
-        updaterecord(formdata);        
-      }
-        resetform();
-      
-  }
 
-  function readFormdata(){
-      var formData = {};
-      formData["productcode"] = document.getElementById("productcode").value;
-      formData["product"] = document.getElementById("product").value;
-      formData["qty"] = document.getElementById("qty").value;
-      formData["perPrice"] = document.getElementById("perPrice").value;
-      return formdata;
-}
+    const productCode = document.getElementById('productcode').value;
+    const productName = document.getElementById('product').value;
+    const productQuantity = document.getElementById('qty').value;
+    const productPrice = document.getElementById('perPrice').value;
 
-function insertNewrecord(data){
-      var table = document.getElementById("storelist").getElementsByTagName('tbody')[0];
-      var newrow = table.insertRow(table.length);
-      var cell1 = newrow.insertCell(0);
-          cell1.innerHTML = data.productcode;
-       var cell2 = newrow.insertCell(1);
-           cell2.innerHTML = data.product;
-       var cell3 = newrow.insertCell(2);
-           cell3.innerHTML = data.qty;
-       var cell4 = newrow.insertCell(3);
-            cell4.innerHTML = data.perPrice;
-       var cell5 = newrow.insertCell(4);
-            cell5.innerHTML = `<button onclick="onEdit(this)">Edit</button> <button onclick="onDelete(this)">Delete</button>`  
-}
-  
-function onEdit(td){
-  selectedrow = td.parentElement.parentElement;
-document.getElementById("productcode").value = selectedrow.cells[0].innerHTML;
-document.getElementById("product").value = selectedrow.cells[1].innerHTML;
-document.getElementById("qty").value = selectedrow.cells[2].innerHTML;
-document.getElementById("perPrice").value = selectedrow.cells[3].innerHTML;
+    const storelist = document.getElementById('storelist');
+    const row = storelist.insertRow();
 
-}
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
 
-function updaterecord(formData){
-  selectedrow.cells[0].innerHTML = formData.productcode;
-  selectedrow.cells[1].innerHTML = formData.product;
-  selectedrow.cells[2].innerHTML = formData.qty;
-  selectedrow.cells[3].innerHTML = formData.perPrice;
+    cell1.textContent = productCode;
+    cell2.textContent = productName;
+    cell3.textContent = productQuantity;
+    cell4.textContent = productPrice;
 
-}
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    const cancelButton = document.createElement('button');
+    cancelButton.textContent = 'Cancel';
 
-function onDelete(td){
-if(confirm("Are you sure you want to delete this record?")){
-  row = td.parentElement.parentElement;
-  document.getElementById("storelist").deleteRow(row.rowIndex);
-}
-resetform();
+    cell5.appendChild(editButton);
+    cell5.appendChild(deleteButton);
+    cell5.appendChild(cancelButton);
 
-}
-
-function resetform(){
-  document.getElementById("productcode").value = " ";
-  document.getElementById("product").value = " ";
-  document.getElementById("qty").value = " ";
-  document.getElementById("perPrice").value = " ";
-  
+    document.getElementById('productcode').value = '';
+    document.getElementById('product').value = '';
+    document.getElementById('qty').value = '';
+    document.getElementById('perPrice').value = '';
 }
