@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <h1>ANM FASHION</h1>
+   <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+
+        <form autocomplete="off" onsubmit="onformsubmit()">
+          <div>
+            <label for="productCode">Product code</label>
+            <input type="text" name="productcode" id="productcode" </div>
+            <div>
+              <label for="product">Product Name</label>
+              <input type="text" name="product" id="product" </div>
+              <div>
+                <label for="qty">Product Quantity</label>
+                <input type="number" name="qty" id="qty" </div>
+                <div>
+                  <label for="perPrice">Price</label>
+                  <input type="number" name="perPrice" id="perPrice" </div>
+                  <div class="form_action--button">
+                    <input type="submit" value="submit">
+                    <input type="reset" value="reset">
+                  </div>
+        </form>
+
+      <td>
+        <table class="list" id="storelist">
+          <thead>
+            <tr>
+              <th>Product Code</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+
+          </thead>
+          <tbody>
+          
+          </tbody>
+        </table>
+
+      </td>
+
+    </tr>
+
+  </table>
+
+  <script type="text/javascript" src="./script.js"></script>
+  
+</body>
+
+</html>
