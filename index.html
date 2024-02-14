@@ -1,60 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="english">
 <head>
-  <h1>ANM FASHION</h1>
-   <link type="text/css" rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>AN</h1>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <table>
-    <tr>
-      <td>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onformsubmit(event);">
+                    <div>
+                        <label for="productCode">Product code</label>
+                        <input type="text" name="productcode" id="productcode">
+                    </div>
+                    <div>
+                        <label for="product">Product Name</label>
+                        <input type="text" name="product" id="product">
+                    </div>
+                    <div>
+                        <label for="qty">Product Quantity</label>
+                        <input type="number" name="qty" id="qty">
+                    </div>
+                    <div>
+                        <label for="perPrice">Price</label>
+                        <input type="number" name="perPrice" id="perPrice">
+                    </div>
 
-        <form autocomplete="off" onsubmit="onformsubmit()">
-          <div>
-            <label for="productCode">Product code</label>
-            <input type="text" name="productcode" id="productcode" </div>
-            <div>
-              <label for="product">Product Name</label>
-              <input type="text" name="product" id="product" </div>
-              <div>
-                <label for="qty">Product Quantity</label>
-                <input type="number" name="qty" id="qty" </div>
-                <div>
-                  <label for="perPrice">Price</label>
-                  <input type="number" name="perPrice" id="perPrice" </div>
-          
-                  <div class="form_action- -button">
-                    <input type="submit" value="submit">
-                    <input type="reset" value="reset">
-                  </div>
-        </form>
+                    <div class="form_action button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </td>
 
-      <td>
-        <table class="list" id="storelist">
-          <thead>
-            <tr>
-              <th>Product Code</th>
-              <th>Product Name</th>
-              <th>Quantity</th>
-              <th>Price</th>
-            </tr>
+            <td>
+                <table class="list" id="storelist">
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-          </thead>
-          <tbody>
-          
-          </tbody>
-        </table>
-
-      </td>
-
-    </tr>
-
-  </table>
-
-  <script src="script.js"></script>
-  
+    <script src="app.js"></script>
 </body>
-
 </html>
