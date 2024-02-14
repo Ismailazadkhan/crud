@@ -2,7 +2,7 @@ body{
   background-image: url(logo.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 100px;
 }
 
 table{
