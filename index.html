@@ -11,7 +11,34 @@
       <table> 
         <tr> 
           <td>
-            <form autocomplete="off" onsubmit="onformsubmit(event);"> 
+            <!-- <div class="main">
+ 
+        Product Code:<input type="text" id="Product Code" placeholder="Enter Product code">
+        Product name:<input type="text" id="Product name" placeholder="Enter Product name">
+        Product Qty:<input type="text" id="Product Qty" placeholder="Product Qty">
+        <form onsubmit="addData(); clearForm()">
+        <input type="submit" onclick="validateForm()" value="Submit" class="submit-button">
+        <button onclick="clearForm()">Clear</button>
+    <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Search for names..">
+</form>
+ </div> -->
+ <div class="main">
+    Product Code:<input type="text" id="Product Code" placeholder="Product Code">
+    <span id="nameError" style="color: red; display: none;">Please Enter Product name</span>
+    <br>
+    Product Qty:<input type="text" id="Product Qty" placeholder="Enter Product Qty">
+    <span id="Product Qty" style="color: red; display: none;">Please enter a valid Product Qty</span>
+    <br>
+    Price:<input type="text" id="id" placeholder="Price">
+    <span id="idError" style="color: red; display: none;">Please enter Price</span>
+    <br>
+    <form onsubmit="return validateForm();">
+        <input type="submit" value="Submit" class="submit-button">
+        <button type="button" onclick="clearForm()">Clear</button>
+        <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Search for names..">
+    </form>
+</div>
+
               <div> <label for="productCode">Product code</label> 
                 <input type="text" name="productcode" id="productcode"> 
               </div> 
