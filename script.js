@@ -6,9 +6,7 @@ function onformsubmit(event) {
     const productQuantity = document.getElementById('qty').value;
     const productPrice = document.getElementById('perPrice').value;
 
-    const storelist = document.getElementById('storelist');
-    const row = storelist.insertRow();
-
+   
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
