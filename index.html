@@ -23,6 +23,7 @@
 </form>
  </div> -->
  <div class="main">
+   <form onsubmit="return validateForm();">
     Product Code:<input type="number" id="Product Code" placeholder="Product Code">
     <span id="nameError" style="color: red; display: none;">Please Enter Product name</span>
     <br>
@@ -32,7 +33,7 @@
     Price:<input type="number" id="id" placeholder="Price">
     <span id="idError" style="color: red; display: none;">Please enter Price</span>
     <br>
-    <form onsubmit="return validateForm();">
+    
         <input type="submit" value="Submit" class="submit-button">
         <button type="reset" onclick="clearForm()">Clear</button>
         <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Search for names..">
