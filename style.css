@@ -1,8 +1,6 @@
 body{
   background-image: url(logo.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  width: 100%; 
 }
 
 table{
